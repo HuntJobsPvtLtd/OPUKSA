@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | OPU</title>
+  <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W9XDXD5X');</script>
+    <!-- End Google Tag Manager -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('lYNOR8xJn5g4WQJZ'); </script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/image/Logo/Opu_Logow.jpg" type="image/x-icon" />
+  <link rel="canonical" href="https://opuksa.com/about.html" />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="/js/LanguageTranslation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-green': '#064e3b',
+            'secondary-green': '#059669',
+            'accent-light-green': '#10b981',
+            'accent-orange': '#ee9b00',
+            // Re-aliasing for cleaner class names
+            // 'primary': '#356ab2',
+            // 'secondary': '#63bc63',
+            'dark-card': '#1f2937', // Custom dark color for advanced UI
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+          }
+        },
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1F2937;
+      /* Dark text for contrast on light background */
+    }
+
+    .text-primary {
+      color: var(--color-primary);
+    }
+
+    .bg-primary {
+      background-color: var(--color-primary);
+    }
+
+    .hover\:bg-primary:hover {
+      background-color: var(--color-primary);
+    }
+
+    .text-secondary {
+      color: var(--color-secondary);
+    }
+
+    .bg-secondary {
+      background-color: var(--color-secondary);
+    }
+
+    .hover\:bg-secondary:hover {
+      background-color: var(--color-secondary);
+    }
+
+    .border-secondary {
+      border-color: var(--color-secondary);
+    }
+
+    /* Custom Gradients using the Brand Colors */
+    .text-brand-gradient {
+      /* Using dark green to bright green */
+      background: linear-gradient(90deg, var(--color-secondary) 0%, var(--secondary-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bg-brand-gradient {
+      /* Used for CTA button */
+      background: linear-gradient(90deg, var(--color-secondary) 0%, var(--secondary-color) 100%);
+    }
+
+    /* Custom Hover Effect for Cards (Subtle lift and shadow) */
+    .card-hover-effect {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover-effect:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.1), 0 4px 6px -2px rgba(5, 150, 105, 0.05);
+      border-color: var(--color-secondary);
+    }
+
+    /* Custom CSS for the Testimonial Slider */
+    .slider-container {
+      /* Hide default scrollbar */
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+      scroll-behavior: smooth;
+      /* Smooth scrolling */
+      scroll-snap-type: x mandatory;
+      /* Snap to slides */
+    }
+
+    .slider-container::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari and Opera */
+    }
+
+    .testimonial-slide {
+      scroll-snap-align: start;
+      /* Default: Take full width on mobile */
+      width: 100%;
+    }
+
+    /* Show 3 slides at a time on large screens */
+    @media (min-width: 1024px) {
+      .testimonial-slide {
+        width: calc(100% / 3 - 1.5rem);
+        /* 100% / 3 columns - gap space */
+      }
+    }
+
+    /* Handle tablet width to show 2 at a time */
+    @media (min-width: 640px) and (max-width: 1023px) {
+      .testimonial-slide {
+        width: calc(100% / 2 - 1rem);
+        /* 100% / 2 columns - gap space */
+      }
+    }
+
+    .slider-container {
+      /* Hides the default scrollbar */
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .slider-container::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari, Opera */
+    }
+
+    .testimonial-slide {
+      scroll-snap-align: start;
+      min-width: 90%;
+      /* Default for mobile */
+      transition: transform 0.3s ease-out;
+    }
+
+    /* Responsive width adjustments for the slides */
+    @media (min-width: 640px) {
+
+      /* sm */
+      .testimonial-slide {
+        min-width: calc(50% - 12px);
+        /* 2 items + half of the space-x-6 (24px) */
+      }
+    }
+
+    @media (min-width: 1024px) {
+
+      /* lg */
+      .testimonial-slide {
+        min-width: calc(33.333333% - 16px);
+        /* 3 items + two-thirds of the space-x-6 (24px) */
+      }
+    }
+
+    /* Advanced Button Hover Effect */
+    .slider-button {
+      transition: all 0.3s ease-in-out;
+      opacity: 0.8;
+      transform: scale(1);
+    }
+
+    .slider-button:hover {
+      opacity: 1;
+      /* transform: scale(1.05); */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8KPPFWS3R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-K8KPPFWS3R');
+  </script>
+</head>
+
+<body class="bg-white antialiased overflow-x-hidden">
+
+  <!-- HEADER (Placeholder) -->
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9XDXD5X"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="header"></div>
+
+  <!-- 1. HERO SECTION: About Us Overview (Light Theme, Dark Text) -->
+  <section class="relative text-center py-32 pb-10 px-6 bg-white border-b border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-lg font-semibold text-secondary mb-3">Our Commitment to Excellence</p>
+      <h1 class="text-3xl sm:text-7xl font-extrabold mb-6 text-primary">
+        About OPU <br>Clarity, Compliance, Growth.
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">We are a passionate team of professionals dedicated to
+        transforming accounting and business solutions across Saudi Arabia, ensuring fast and affordable financial
+        services without compromising on quality or regulatory adherence.</p>
+    </div>
+  </section>
+
+  <!-- 2. MISSION, VISION, & STORY (Alternating Backgrounds) -->
+  <section class="py-20 md:py-10 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+        <!-- The Mission & The Vision -->
+        <div class="space-y-10">
+          <!-- The Mission -->
+          <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-secondary card-hover-effect">
+            <h2 class="text-3xl font-bold text-primary mb-4 flex items-center">
+              <i data-lucide="target" class="w-7 h-7 mr-3 text-secondary"></i> Our Mission
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              To provide top-notch financial guidance and ensure businesses maintain compliance, transparency, and
+              sustainable growth through our tailored accounting, auditing, and advisory services. We prioritize
+              efficient, cutting-edge solutions to deliver fast and affordable financial accounting services to every
+              client.
+            </p>
+          </div>
+
+          <!-- The Vision -->
+          <div class="p-8 bg-white rounded-xl shadow-lg border-l-4 border-primary card-hover-effect">
+            <h2 class="text-3xl font-bold text-primary mb-4 flex items-center">
+              <i data-lucide="eye" class="w-7 h-7 mr-3 text-secondary"></i> Our Vision
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              To become the leading accounting and consultancy firm in Saudi Arabia, redefining how companies handle
+              finance, compliance, and growth through technology-driven insights and unparalleled local expertise.
+            </p>
+          </div>
+        </div>
+
+        <!-- The Story -->
+        <div class="p-8 md:p-12 bg-primary rounded-xl text-white shadow-2xl">
+          <h2 class="text-4xl font-extrabold mb-6 flex items-center border-b border-white/30 pb-4">
+            <i data-lucide="bookmark" class="w-8 h-8 mr-3 text-secondary"></i> The Story
+          </h2>
+          <p class="text-gray-200 text-lg leading-relaxed">
+            Founded with a vision to bring clarity to complex financial landscapes, OPU has evolved into a trusted
+            partner for businesses of all scales. Our journey began with a commitment to democratize expert financial
+            knowledge, making it accessible and affordable for SMEs and large enterprises alike in the rapidly evolving
+            Saudi market.
+            <br><br>
+            With a dedicated team of certified professionals and years of experience in auditing, taxation, and business
+            setup, we’ve helped hundreds of clients achieve operational excellence, compliance, and robust financial
+            health, fueling economic growth aligned with Vision 2030.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. OUR VALUES (Grid with large icons) -->
+  <section class="py-20 md:py-10 px-6 bg-white">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-extrabold text-primary mb-3">Our Core Values</h2>
+      <p class="text-xl text-gray-600 max-w-4xl mx-auto mb-16">These principles guide every decision we make and every
+        interaction we have with our clients and partners.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- Value 1: Integrity -->
+        <div class="p-6 rounded-xl border-2 border-gray-100 card-hover-effect">
+          <i data-lucide="gem" class="w-12 h-12 text-secondary mb-4 mx-auto"></i>
+          <h3 class="font-bold text-xl mb-2 text-primary">Integrity</h3>
+          <p class="text-gray-600 text-sm">Upholding the highest moral and ethical standards in all financial and
+            regulatory matters.</p>
+        </div>
+
+        <!-- Value 2: Transparency -->
+        <div class="p-6 rounded-xl border-2 border-gray-100 card-hover-effect">
+          <i data-lucide="eye " class="w-12 h-12 text-secondary mb-4 mx-auto"></i>
+          <h3 class="font-bold text-xl mb-2 text-primary">Transparency</h3>
+          <p class="text-gray-600 text-sm">Providing clear, honest, and comprehensive reporting and communication at all
+            times.</p>
+        </div>
+
+        <!-- Value 3: Expertise -->
+        <div class="p-6 rounded-xl border-2 border-gray-100 card-hover-effect">
+          <i data-lucide="graduation-cap" class="w-12 h-12 text-secondary mb-4 mx-auto"></i>
+          <h3 class="font-bold text-xl mb-2 text-primary">Expertise</h3>
+          <p class="text-gray-600 text-sm">Leveraging deep, certified knowledge of ZATCA and local regulations for
+            optimal results.</p>
+        </div>
+
+        <!-- Value 4: Client-Centric -->
+        <div class="p-6 rounded-xl border-2 border-gray-100 card-hover-effect">
+          <i data-lucide="user-check" class="w-12 h-12 text-secondary mb-4 mx-auto"></i>
+          <h3 class="font-bold text-xl mb-2 text-primary">Client-Centric</h3>
+          <p class="text-gray-600 text-sm">Tailoring solutions to meet specific business needs and supporting long-term
+            success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 5. OUR RESOURCES (Downloadable Content / Knowledge Hub) -->
+  <section id="resources" class="py-20 md:py-12 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold text-primary mb-3">Our Resources</h2>
+        <p class="text-xl text-gray-600 max-w-4xl mx-auto">Access exclusive guides and tools to enhance your business's
+          financial literacy and compliance.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Resource 1: E-Invoicing Guide -->
+        <div
+          class="p-6 bg-secondary/5 rounded-xl border border-secondary/20 flex flex-col justify-between card-hover-effect">
+          <div>
+            <i data-lucide="file-text" class="w-10 h-10 text-secondary mb-4"></i>
+            <h3 class="font-bold text-xl mb-2 text-primary">The Ultimate ZATCA E-Invoicing Guide</h3>
+            <p class="text-gray-600 text-sm">A step-by-step PDF guide to ensure your business is fully compliant with
+              the latest Fatoorah requirements.</p>
+          </div>
+          <!-- <a href="#"
+            class="mt-4 text-secondary font-semibold hover:text-primary transition duration-200 flex items-center">
+            Download Now <i data-lucide="download" class="w-4 h-4 ml-2"></i>
+          </a> -->
+        </div>
+
+        <!-- Resource 2: Corporate Tax Checklist -->
+        <div
+          class="p-6 bg-secondary/5 rounded-xl border border-secondary/20 flex flex-col justify-between card-hover-effect">
+          <div>
+            <i data-lucide="clipboard-check" class="w-10 h-10 text-secondary mb-4"></i>
+            <h3 class="font-bold text-xl mb-2 text-primary">Annual Corporate Tax Checklist</h3>
+            <p class="text-gray-600 text-sm">A detailed list of documents and procedures needed to prepare for corporate
+              tax filing and audits.</p>
+          </div>
+          <!-- <a href="#"
+            class="mt-4 text-secondary font-semibold hover:text-primary transition duration-200 flex items-center">
+            Download Now <i data-lucide="download" class="w-4 h-4 ml-2"></i>
+          </a> -->
+        </div>
+
+        <!-- Resource 3: Business Setup Advisory -->
+        <div
+          class="p-6 bg-secondary/5 rounded-xl border border-secondary/20 flex flex-col justify-between card-hover-effect">
+          <div>
+            <i data-lucide="lightbulb" class="w-10 h-10 text-secondary mb-4"></i>
+            <h3 class="font-bold text-xl mb-2 text-primary">SME Growth & Advisory Insights</h3>
+            <p class="text-gray-600 text-sm">Monthly insights on financial strategies, cost optimization, and investment
+              planning for growing businesses.</p>
+          </div>
+          <!-- <a href="#"
+            class="mt-4 text-secondary font-semibold hover:text-primary transition duration-200 flex items-center">
+            Read Latest <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA SECTION (Final Call to Action) -->
+  <section class="py-24 text-center bg-primary text-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold mb-6">
+        Ready to Experience Financial Clarity?
+      </h2>
+      <p class="text-gray-200 mb-8 text-lg">Let OPU handle the complexity, so you can focus on driving your business
+        forward.</p>
+      <a href="/contact.html"
+        class="inline-block bg-brand-gradient px-8 py-4 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transition-all hover:bg-white bg-white">
+        Contact Our Experts Today
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER (Placeholder) -->
+  <div id="footer"></div>
+
+  <!-- <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // GSAP ScrollTrigger Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray("section").forEach((section, i) => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: section,
+          start: "top 85%",
+          toggleActions: "play none none reverse"
+        }
+      });
+    });
+
+    // Testimonial Slider Logic
+    const slider = document.getElementById('testimonial-slider');
+    const prevButton = document.getElementById('prev-slide');
+    const nextButton = document.getElementById('next-slide');
+    const slideElements = document.querySelectorAll('.testimonial-slide');
+
+    if (slider && prevButton && nextButton && slideElements.length > 0) {
+
+      const totalSlides = slideElements.length;
+
+      const updateButtonState = () => {
+        // Determine if we are at the start or end of the scrollable area
+        const atStart = slider.scrollLeft === 0;
+        // Allow a small tolerance for floating point errors in some browsers
+        const atEnd = slider.scrollWidth - slider.scrollLeft - 1 <= slider.clientWidth;
+
+        prevButton.disabled = atStart;
+        nextButton.disabled = atEnd;
+      };
+
+      const getScrollAmount = () => {
+        const isLargeScreen = window.innerWidth >= 1024;
+        const isMediumScreen = window.innerWidth >= 640 && window.innerWidth < 1024;
+        const gap = 24; // Tailwind's space-x-6 is 1.5rem = 24px
+
+        if (isLargeScreen) {
+          // Slide by 3 items on large screens
+          return (slider.clientWidth / 3) + gap * 0.66; // Approx width of one item + gap correction
+        } else if (isMediumScreen) {
+          // Slide by 2 items on medium screens
+          return (slider.clientWidth / 2) + gap * 0.5;
+        } else {
+          // Slide by 1 item on small screens
+          return slider.clientWidth;
+        }
+      };
+
+      const slide = (direction) => {
+        const amount = getScrollAmount();
+        const currentScroll = slider.scrollLeft;
+        let targetScroll;
+
+        if (direction === 'next') {
+          targetScroll = currentScroll + amount;
+        } else {
+          targetScroll = currentScroll - amount;
+        }
+
+        // Ensure the target scroll doesn't exceed bounds
+        targetScroll = Math.max(0, Math.min(targetScroll, slider.scrollWidth - slider.clientWidth));
+
+        slider.scrollTo({
+          left: targetScroll,
+          behavior: 'smooth'
+        });
+
+        // Update state after animation (using a timeout for visual effect)
+        setTimeout(updateButtonState, 300);
+      };
+
+      // Event listeners
+      nextButton.addEventListener('click', () => slide('next'));
+      prevButton.addEventListener('click', () => slide('prev'));
+
+      // Update button state on scroll (user or script initiated) and resize
+      slider.addEventListener('scroll', updateButtonState);
+      window.addEventListener('resize', () => {
+        // Force recalculation of scroll position on resize
+        slider.scrollLeft = 0;
+        updateButtonState();
+      });
+
+      // Initial state setup
+      updateButtonState();
+    }
+  </script> -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // GSAP ScrollTrigger Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Simple fade-in animation for the section
+    gsap.from("section", {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "section",
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      }
+    });
+
+    // Testimonial Slider Logic (Infinite Looping)
+    const slider = document.getElementById('testimonial-slider');
+
+    // Use both desktop and mobile buttons for a single logic function
+    const prevButton = document.getElementById('prev-slide') || document.getElementById('mobile-prev-slide');
+    const nextButton = document.getElementById('next-slide') || document.getElementById('mobile-next-slide');
+
+    // Get all real slide elements
+    const realSlideElements = Array.from(document.querySelectorAll('.testimonial-slide'));
+
+    if (slider && prevButton && nextButton && realSlideElements.length > 0) {
+
+      let isTransitioning = false;
+      let currentSlideIndex = 0; // Tracks the logical index (0 to 4)
+
+      // 1. Clone slides for infinite loop buffer
+      const bufferCount = 2; // Clone the first 2 slides and the last 2 slides for smooth transition
+
+      // Clone and prepend the last N slides
+      for (let i = 1; i <= bufferCount; i++) {
+        const clone = realSlideElements[realSlideElements.length - i].cloneNode(true);
+        clone.classList.add('clone-end');
+        slider.prepend(clone);
+      }
+
+      // Clone and append the first N slides
+      for (let i = 0; i < bufferCount; i++) {
+        const clone = realSlideElements[i].cloneNode(true);
+        clone.classList.add('clone-start');
+        slider.appendChild(clone);
+      }
+
+      const allSlides = Array.from(slider.querySelectorAll('.testimonial-slide'));
+      const totalLogicalSlides = realSlideElements.length;
+
+      // Calculate slide width and gap dynamically (assuming all slides have the same width/margin)
+      let slideWidthWithGap;
+      const calculateSlideWidth = () => {
+        // Since the widths are defined by CSS, we get the offset width of the first REAL slide
+        const firstSlide = realSlideElements[0];
+        const gap = 24; // space-x-6 is 1.5rem = 24px
+        slideWidthWithGap = firstSlide.offsetWidth + gap;
+      };
+
+      // 2. Function to jump to a specific index
+      const jumpToSlide = (index, animated = true) => {
+        // index 0 of the real slides starts after the 'bufferCount' number of clones
+        const targetSlideIndex = index + bufferCount;
+        const targetScrollLeft = targetSlideIndex * slideWidthWithGap;
+
+        if (!animated) {
+          // Instantly set scroll for the wrap-around jump
+          slider.scrollLeft = targetScrollLeft;
+        } else {
+          // Smooth scroll for normal movement
+          slider.scrollTo({
+            left: targetScrollLeft,
+            behavior: 'smooth'
+          });
+        }
+        currentSlideIndex = index;
+      };
+
+      // 3. Main sliding logic
+      const slide = (direction) => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        let nextLogicalIndex;
+
+        if (direction === 'next') {
+          nextLogicalIndex = (currentSlideIndex + 1) % totalLogicalSlides;
+        } else {
+          nextLogicalIndex = (currentSlideIndex - 1 + totalLogicalSlides) % totalLogicalSlides;
+        }
+
+        // Temporary set the current index to the new index and let the smooth scroll happen
+        currentSlideIndex = nextLogicalIndex;
+        jumpToSlide(currentSlideIndex);
+
+        // Check for wrap-around after smooth transition completes
+        setTimeout(() => {
+          isTransitioning = false;
+          // This function is now mostly redundant since jumpToSlide handles both scroll and index update.
+          // We keep the timeout to prevent rapid clicking during transition.
+        }, 400); // Wait for smooth scroll (300ms) plus a buffer
+      };
+
+      // 4. Handle initial setup and window resize
+      const setupSlider = () => {
+        calculateSlideWidth();
+
+        // Adjust slider container width to fit all slides (including clones)
+        // We use max-w-7xl, so we need to set the width of the container itself to be huge
+        // We will rely on CSS `min-width` and `overflow-x-scroll` instead of setting a fixed width.
+
+        // Initial position: start at the first REAL slide (after the clones)
+        jumpToSlide(0, false);
+      };
+
+
+      // 5. Handle smooth wrap-around on scroll end (when user scrolls manually)
+      const handleScroll = () => {
+        if (isTransitioning) return;
+
+        const scrollLeft = slider.scrollLeft;
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+        // Index of the first real slide's starting position
+        const firstRealSlideStart = bufferCount * slideWidthWithGap;
+        // Index of the last real slide's ending position
+        const lastRealSlideEnd = (totalLogicalSlides + bufferCount - 1) * slideWidthWithGap;
+
+        let shouldJump = false;
+        let targetIndex = currentSlideIndex; // Fallback
+
+        // Logic to update current index based on where the user scrolled
+        const currentCenterScroll = scrollLeft + slider.clientWidth / 2;
+        const closestIndex = Math.round(currentCenterScroll / slideWidthWithGap);
+
+        // Update logical index based on user's manual scroll (relative to the whole list of slides including clones)
+        let newLogicalIndex = closestIndex - bufferCount;
+        if (newLogicalIndex < 0) newLogicalIndex = 0; // Should not happen with current setup but safe guard
+        if (newLogicalIndex >= totalLogicalSlides) newLogicalIndex = totalLogicalSlides - 1; // Safeguard
+
+        currentSlideIndex = newLogicalIndex;
+
+
+        // If scrolled far to the left (into clones of the end slides)
+        if (scrollLeft < firstRealSlideStart - slideWidthWithGap * 0.5) {
+          shouldJump = true;
+          // Jump instantly to the end of the real slides
+          targetIndex = totalLogicalSlides - 1;
+        }
+        // If scrolled far to the right (into clones of the start slides)
+        else if (scrollLeft > lastRealSlideEnd + slideWidthWithGap * 0.5) {
+          shouldJump = true;
+          // Jump instantly to the start of the real slides
+          targetIndex = 0;
+        }
+
+        if (shouldJump) {
+          isTransitioning = true;
+          // Temporarily remove smooth behavior for the jump
+          slider.style.scrollBehavior = 'auto';
+
+          // Delay the jump slightly to let the transition finish before snapping
+          setTimeout(() => {
+            jumpToSlide(targetIndex, false);
+            slider.style.scrollBehavior = 'smooth'; // Restore smooth behavior
+            isTransitioning = false;
+          }, 50);
+        }
+      };
+
+
+      // Event listeners
+      nextButton.addEventListener('click', () => slide('next'));
+      if (document.getElementById('mobile-next-slide')) {
+        document.getElementById('mobile-next-slide').addEventListener('click', () => slide('next'));
+      }
+
+      prevButton.addEventListener('click', () => slide('prev'));
+      if (document.getElementById('mobile-prev-slide')) {
+        document.getElementById('mobile-prev-slide').addEventListener('click', () => slide('prev'));
+      }
+
+
+      // Listen for user scroll
+      slider.addEventListener('scroll', handleScroll);
+
+      // Update on resize
+      window.addEventListener('resize', setupSlider);
+
+      // Initial setup
+      setupSlider();
+    }
+  </script>
+
+  <script src="js/script.js"></script>
+
+  <!-- Placeholder for external script, not needed for single file mandate -->
+  <!-- <script src="js/script.js"></script> -->
+<script src="/js/chatbot-component.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        new OpuksaChatbot({
+            apiEndpoint: 'https://pxibh983vh.execute-api.ap-south-1.amazonaws.com/Prod/api/OPUKsa/Contact' 
+        });
+    });
+</script>
+
+</body>
+
+</html>

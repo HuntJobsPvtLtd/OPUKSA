@@ -1,0 +1,200 @@
+ :root {
+     --primary-color: #064e3b;
+     --secondary-color: #10b981;
+     --color-secondary: #059669;
+     --color-primary: #064e3b;
+
+     /* --primary-color: #0b3d91;      
+--secondary-color: #1e90ff;    
+--color-primary: #0d47a1;      
+--color-secondary: #64b5f6;     */
+
+
+ }
+
+
+ /* Add to container of flex items for reference */
+ .lg-flex-container {
+     position: relative;
+     display: flex;
+     justify-content: space-between;
+ }
+
+ /* Make sure left content is above right side if overlapping */
+ .lg-flex-container>.left {
+     width: 50%;
+     background: #fff;
+     /* temporary for testing */
+     z-index: 20;
+     position: relative;
+ }
+
+ /* Right side containment */
+ .lg-flex-container>.right {
+     width: 50%;
+     position: relative;
+     /* so absolute inside is relative to this */
+     z-index: 10;
+ }
+
+ /* Floating cards adjustments */
+ #float-card-1,
+ #float-card-2 {
+     z-index: 30;
+     /* just confirm */
+     pointer-events: auto;
+     /* allow interaction */
+ }
+
+ /* If absolute cards going outside right container, constrain */
+ .lg-flex-container>.right {
+     overflow: visible;
+     /* or hidden if you want clip */
+ }
+
+ /* 
+ .VIpgJd-ZVi9od-ORHb-OEVmcd {
+     display: none !important;
+ }
+
+ .VIpgJd-ZVi9od-ORHb {
+     display: none !important;
+
+ }
+
+ .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+     display: none !important;
+ } */
+
+ .VIpgJd-ZVi9od-ORHb-OEVmcd,
+ .VIpgJd-ZVi9od-ORHb,
+ .VIpgJd-ZVi9od-aZ2wEe-wOHMyf {
+     display: block !important;
+     visibility: visible !important;
+     opacity: 1 !important;
+ }
+
+ .VIpgJd-ZVi9od-ORHb-OEVmcd {
+     display: none !important;
+ }
+
+ .goog-te-gadget-icon {
+     display: none !important;
+ }
+
+ body {
+     top: 0px !important;
+ }
+
+ .goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed span {
+     /* color: #ee403c !important; */
+     font-size: 12px !important;
+ }
+
+ .VIpgJd-ZVi9od-xl07Ob-OEVmcd {
+     position: absolute !important;
+ }
+
+ #google_translate_element {
+     /* margin-top: 19px !important; */
+     text-align: center;
+ }
+
+ .goog-te-gadget-simple {
+     background-color: #fff !important;
+     color: green I !important;
+     border: none !important;
+ }
+
+ #google_translate_element .skiptranslate {
+     padding: 0 20px !important;
+ }
+
+ @media only screen and (max-width: 600px) {
+     .goog-te-gadget-simple {
+         background-color: #ffffff !important;
+         color: white !important;
+         border: none !important;
+     }
+
+     #google_translate_element {
+         margin-top: 1px !important;
+     }
+
+ }
+
+
+ .header-transparent #Top_bar.is-sticky .menu_wrapper .menu>li>#google_translate_element {
+     margin-top: 15px !important;
+ }
+
+ .goog-te-gadget-simple .VIpgJd-ZVi9od-xl07Ob-lTBxed {
+     color: var(--primary-color) !important;
+ }
+
+ .VIpgJd-ZVi9od-xl07Ob-lTBxed {
+     display: flex !important;
+ }
+
+
+
+ /* Style the translate dropdown */
+ .goog-te-gadget {
+     font-family: 'Inter', sans-serif !important;
+ }
+
+ .goog-te-gadget-simple {
+     background-color: transparent !important;
+     border: 1px solid #10b981 !important;
+     padding: 5px 10px !important;
+     border-radius: 8px !important;
+     font-size: 14px !important;
+ }
+
+ .goog-te-gadget-simple .goog-te-menu-value span {
+     color: #064e3b !important;
+ }
+
+ .goog-te-gadget-simple:hover {
+     background-color: #f0fdf4 !important;
+ }
+
+ /* Hide "Powered by Google" */
+ .goog-te-gadget-simple .goog-te-gadget-icon {
+     display: none !important;
+ }
+
+ /* Style the dropdown arrow */
+ .goog-te-gadget-simple span {
+     border-left: none !important;
+ }
+
+ @media (max-width: 768px) {
+     #google_translate_element {
+         display: block !important;
+         margin-top: 10px;
+         text-align: center;
+         z-index: 9999;
+         position: relative;
+     }
+ }
+
+ /* Remove the focus/active box on desktop/laptop links and buttons */
+ @media (min-width: 1024px) {
+
+     header a,
+     header button {
+         outline: none;
+         /* removes blue/gray box on click */
+         box-shadow: none;
+         /* removes any shadow that may appear */
+     }
+
+     header a:focus,
+     header button:focus,
+     header a:active,
+     header button:active {
+         outline: none;
+         box-shadow: none;
+     }
+ }

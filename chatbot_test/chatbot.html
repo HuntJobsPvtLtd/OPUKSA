@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opuksa Chatbot - Fixed Contact Form</title>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W9XDXD5X');</script>
+    <!-- End Google Tag Manager -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> (function (ss, ex) { window.ldfdr = window.ldfdr || function () { (ldfdr._q = ldfdr._q || []).push([].slice.call(arguments)); }; (function (d, s) { fs = d.getElementsByTagName(s)[0]; function ce(src) { var cs = d.createElement(s); cs.src = src; cs.async = 1; fs.parentNode.insertBefore(cs, fs); }; ce('https://sc.lfeeder.com/lftracker_v1_' + ss + (ex ? '_' + ex : '') + '.js'); })(document, 'script'); })('lYNOR8xJn5g4WQJZ'); </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/", 
+      "@type": "BreadcrumbList", 
+      "itemListElement": [{
+        "@type": "ListItem", 
+        "position": 1, 
+        "name": "Homepage",
+        "item": "https://opuksa.com/"  
+      },{
+        "@type": "ListItem", 
+        "position": 2, 
+        "name": "Auditing",
+        "item": "https://opuksa.com/services/auditing-firms-in-saudi-arabia.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 3, 
+        "name": "Accounting",
+        "item": "https://opuksa.com/services/accounting-firm-in-saudi-arabia.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 4, 
+        "name": "Accounting Advisory & Policies",
+        "item": "https://opuksa.com/services/accounting-advisory-in-saudi-arabia.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 5, 
+        "name": "Company Formation Company",
+        "item": "https://opuksa.com/services/company-formation-in-saudi-arabia.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 6, 
+        "name": "Tax & Zakat Advisory",
+        "item": "https://opuksa.com/services/zakat-and-tax-in-saudi-arabia.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 7, 
+        "name": "VAT Services",
+        "item": "https://opuksa.com/services/value-added-tax-vat-in-saudi-arabia.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 8, 
+        "name": "Financial Consulting",
+        "item": "https://opuksa.com/services/financial-advisory-solutions-in-saudi-arabia.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 9, 
+        "name": "Our Team",
+        "item": "https://opuksa.com/opu_ourteam.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 10, 
+        "name": "About Us",
+        "item": "https://opuksa.com/about.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 11, 
+        "name": "Contact",
+        "item": "https://opuksa.com/contact.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 12, 
+        "name": "Blog",
+        "item": "https://opuksa.com/blog.html"  
+      },{
+        "@type": "ListItem", 
+        "position": 13, 
+        "name": "Career",
+        "item": "https://opuksa.com/career.html"  
+      }]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Corporation",
+      "name": "Opuksa",
+      "url": "https://opuksa.com/",
+      "logo": "https://opuksa.com/image/Logo/Opu_Logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+966 55 314 4902",
+        "contactType": "sales",
+        "areaServed": "SA",
+        "availableLanguage": "en"
+      },
+      "sameAs": "https://www.linkedin.com/company/opuksa/"
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .chat-bubble {
+            background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+        }
+
+        .scrollbar-thin::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 3px;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 p-8">
+    <!-- Floating Chat Toggle Button -->
+    <button id="chatToggle"
+        class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 shadow-2xl rounded-full flex items-center justify-center text-white text-xl font-bold animate-pulse transition-all duration-300 hover:scale-110 hover:shadow-3xl border-4 border-white/50">
+        💬
+    </button>
+
+    <!-- Chat Widget -->
+    <div id="chatWidget"
+        class="fixed bottom-28 right-6 w-96 max-w-md bg-white rounded-2xl shadow-2xl border border-gray-200 z-40 hidden transform translate-x-full transition-all duration-500 ease-in-out">
+        <!-- Header -->
+        <div class="p-5 border-b border-gray-100 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-t-2xl">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">🤖</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg text-gray-800">OJAS</h3>
+                        <span class="text-sm text-emerald-600 font-medium">OPU Assistant available 24/7</span>
+                    </div>
+                </div>
+                <button id="chatClose"
+                    class="p-2 hover:bg-gray-200 rounded-xl transition-all duration-200 hover:scale-110">
+                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Messages Area -->
+        <div id="chatMessages"
+            class="h-96 p-5 overflow-y-auto space-y-4 bg-gray-50 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+            <!-- Welcome Message -->
+            <div class="chat-message bot-message">
+                <div class="flex items-start space-x-3">
+                    <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-white font-bold text-sm">🤖</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl rounded-bl-sm shadow-sm max-w-[90%] border border-gray-100">
+                        <p class="text-gray-800 text-sm leading-relaxed mb-3">Hello! 👋 I'm here to help with <strong
+                                class="text-emerald-600">all Opuksa services in Saudi Arabia</strong>.</p>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <button
+                                class="quick-reply px-3 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 text-xs font-medium rounded-lg transition-all duration-200 border border-emerald-200"
+                                data-query="auditing">Auditing</button>
+                            <button
+                                class="quick-reply px-3 py-2 bg-blue-100 hover:bg-blue-200 text-blue-800 text-xs font-medium rounded-lg transition-all duration-200 border border-blue-200"
+                                data-query="accounting">Accounting</button>
+                            <button
+                                class="quick-reply px-3 py-2 bg-teal-100 hover:bg-teal-200 text-teal-800 text-xs font-medium rounded-lg transition-all duration-200 border border-teal-200"
+                                data-query="accounting advisory">Advisory</button>
+                            <button
+                                class="quick-reply px-3 py-2 bg-purple-100 hover:bg-purple-200 text-purple-800 text-xs font-medium rounded-lg transition-all duration-200 border border-purple-200"
+                                data-query="zakat tax">Zakat & Tax</button>
+                            <button
+                                class="quick-reply px-3 py-2 bg-orange-100 hover:bg-orange-200 text-orange-800 text-xs font-medium rounded-lg transition-all duration-200 border border-orange-200"
+                                data-query="vat">VAT</button>
+                            <button
+                                class="quick-reply px-3 py-2 bg-indigo-100 hover:bg-indigo-200 text-indigo-800 text-xs font-medium rounded-lg transition-all duration-200 border border-indigo-200"
+                                data-query="financial advisory">Financial</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-5 border-t border-gray-100 bg-white rounded-b-2xl">
+            <div class="flex items-center space-x-3">
+                <div class="flex-1 min-w-0">
+                    <textarea id="chatInput" rows="1" placeholder="Ask about any Opuksa service..."
+                        class="w-full p-3 border border-gray-200 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm leading-relaxed max-h-20 transition-all duration-200"></textarea>
+                </div>
+                <button id="chatSend"
+                    class="w-11 h-11 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 shadow-lg hover:shadow-xl rounded-xl flex items-center justify-center text-white transition-all duration-200 hover:scale-105 active:scale-95 flex-shrink-0 border-2 border-emerald-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-send" viewBox="0 0 16 16">
+                        <path
+                            d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class OpuksaChatbot {
+            constructor() {
+                this.isOpen = false;
+                this.services = {
+                    "auditing": {
+                        title: "🔍 Auditing Services in Saudi Arabia",
+                        info: "Professional <strong>statutory audit</strong> services compliant with SOCPA standards:",
+                        features: [
+                            "Statutory audit for all entity types",
+                            "SOCPA registered auditors",
+                            "Financial statement audits",
+                            "Internal audit services",
+                            "Compliance audits",
+                            "Special purpose audits"
+                        ],
+                        color: "emerald"
+                    },
+                    "accounting": {
+                        title: "📊 Accounting Services",
+                        info: "Complete <strong>accounting solutions</strong> for Saudi businesses:",
+                        features: [
+                            "Bookkeeping & accounting",
+                            "Financial reporting",
+                            "Payroll processing",
+                            "Accounts payable/receivable",
+                            "Bank reconciliation",
+                            "IFRS compliance"
+                        ],
+                        color: "blue"
+                    },
+                    "accounting advisory": {
+                        title: "💡 Accounting Advisory",
+                        info: "Expert <strong>accounting advisory</strong> for optimal financial management:",
+                        features: [
+                            "Accounting system implementation",
+                            "Financial process optimization",
+                            "IFRS & GAAP advisory",
+                            "Accounting software selection",
+                            "Financial controls setup",
+                            "Management accounting"
+                        ],
+                        color: "teal"
+                    },
+                    "zakat tax": {
+                        title: "💰 Zakat & Tax Services",
+                        info: "Comprehensive <strong>Zakat and tax compliance</strong>:",
+                        features: [
+                            "Zakat calculation & filing",
+                            "Corporate income tax",
+                            "Withholding tax compliance",
+                            "Tax planning & optimization",
+                            "ZATCA compliance",
+                            "Transfer pricing"
+                        ],
+                        color: "purple"
+                    },
+                    "vat": {
+                        title: "📈 VAT Services",
+                        info: "Full range of <strong>VAT compliance services</strong>:",
+                        features: [
+                            "VAT registration & deregistration",
+                            "VAT return filing",
+                            "ZATCA Phase 2 e-invoicing",
+                            "VAT audits & assessments",
+                            "Input VAT recovery",
+                            "VAT refund claims"
+                        ],
+                        color: "orange"
+                    },
+                    "financial advisory": {
+                        title: "💼 Financial Advisory",
+                        info: "Strategic <strong>financial advisory</strong> for business growth:",
+                        features: [
+                            "Financial modeling & forecasting",
+                            "Business valuation",
+                            "M&A advisory",
+                            "Fundraising support",
+                            "Budgeting & planning",
+                            "Cash flow management"
+                        ],
+                        color: "indigo"
+                    }
+                };
+                this.init();
+            }
+
+            init() {
+                this.toggleBtn = document.getElementById('chatToggle');
+                this.widget = document.getElementById('chatWidget');
+                this.closeBtn = document.getElementById('chatClose');
+                this.sendBtn = document.getElementById('chatSend');
+                this.input = document.getElementById('chatInput');
+                this.messages = document.getElementById('chatMessages');
+                this.bindEvents();
+                this.autoResizeTextarea();
+            }
+
+            bindEvents() {
+                this.toggleBtn.addEventListener('click', () => this.toggle());
+                this.closeBtn.addEventListener('click', () => {
+                    this.widget.classList.add('hidden', 'translate-x-full');
+                    this.isOpen = false;
+                });
+
+                this.sendBtn.addEventListener('click', () => this.sendMessage());
+                this.input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        this.sendMessage();
+                    }
+                });
+
+                // GLOBAL EVENT LISTENER - Works for ALL enquiry buttons (1st, 2nd, 3rd+)
+                document.addEventListener('click', (e) => {
+                    if (e.target.matches('.contact-trigger') || e.target.closest('.contact-trigger')) {
+                        e.preventDefault();
+                        const btn = e.target.matches('.contact-trigger') ? e.target : e.target.closest('.contact-trigger');
+                        const serviceKey = btn.dataset.service || 'general';
+                        this.showContactForm(serviceKey);
+                    }
+                });
+
+                // Quick reply buttons
+                document.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('quick-reply')) {
+                        const query = e.target.dataset.query;
+                        this.input.value = query;
+                        this.sendMessage();
+                    }
+                });
+            }
+
+            toggle() {
+                this.isOpen = !this.isOpen;
+                if (this.isOpen) {
+                    this.widget.classList.remove('hidden', 'translate-x-full');
+                    this.widget.classList.add('translate-x-0');
+                    setTimeout(() => this.input.focus(), 200);
+                }
+            }
+
+            sendMessage() {
+                const message = this.input.value.trim().toLowerCase();
+                if (!message) return;
+
+                this.addMessage(this.input.value, 'user');
+                this.input.value = '';
+
+                setTimeout(() => {
+                    const service = this.detectService(message);
+                    if (service) {
+                        this.showServiceInfo(service);
+                    } else {
+                        this.showGenericResponse();
+                    }
+                }, 600);
+            }
+
+            detectService(message) {
+                for (let key in this.services) {
+                    if (message.includes(key)) {
+                        return key;
+                    }
+                }
+                return null;
+            }
+
+            showServiceInfo(serviceKey) {
+                const service = this.services[serviceKey];
+                this.addMessage(`
+                    <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100">
+                        <h4 class="font-bold text-lg text-${service.color}-700 mb-3">${service.title}</h4>
+                        <p class="text-gray-700 mb-4 text-sm">${service.info}</p>
+                        <div class="grid grid-cols-1 gap-2 mb-4">
+                            ${service.features.map(feat => `<div class="flex items-start space-x-2 p-2 bg-${service.color}-50 rounded-lg"><span class="text-${service.color}-500 text-sm font-medium mt-0.5 flex-shrink-0">✓</span><span class="text-sm text-gray-700">${feat}</span></div>`).join('')}
+                        </div>
+                        <div class="pt-3 border-t border-gray-100">
+                            <button class="contact-trigger w-full bg-gradient-to-r from-${service.color}-500 to-${service.color}-600 text-white py-2.5 px-4 rounded-xl font-semibold hover:shadow-lg transition-all text-sm flex items-center justify-center space-x-2" data-service="${serviceKey}">
+                                📞 Send Enquiry
+                            </button>
+                        </div>
+                    </div>
+                `, 'bot');
+            }
+
+            showGenericResponse() {
+                this.addMessage(`
+                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
+                        <p class="text-gray-700 text-sm mb-3">I can help with these Opuksa services:</p>
+                        <div class="grid grid-cols-2 gap-2 mb-4">
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs rounded-lg font-medium">Auditing</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-lg font-medium">Accounting</span>
+                            <span class="px-3 py-1 bg-teal-100 text-teal-800 text-xs rounded-lg font-medium">Advisory</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-lg font-medium">Zakat & Tax</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-800 text-xs rounded-lg font-medium">VAT</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-xs rounded-lg font-medium">Financial</span>
+                        </div>
+                        <button class="contact-trigger w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-2.5 px-4 rounded-xl font-semibold hover:shadow-lg transition-all text-sm" data-service="general">
+                            📞 Send Enquiry
+                        </button>
+                    </div>
+                `, 'bot');
+            }
+
+            showContactForm(serviceKey = 'general') {
+                const serviceName = serviceKey === 'general' ? 'Opuksa Services' : this.services[serviceKey]?.title || 'Services';
+
+                this.addMessage(`
+                    <div class="bg-emerald-50 border-2 border-emerald-200 p-5 rounded-2xl">
+                        <div class="flex items-start space-x-3 mb-4">
+                            <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <span class="text-white font-bold text-sm">📋</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-emerald-800 text-sm mb-1">${serviceName} Enquiry</h4>
+                                <p class="text-emerald-700 text-xs">Fill the form below - our expert will contact you within 24 hours</p>
+                            </div>
+                        </div>
+                        <form class="contact-form space-y-3" data-service="${serviceKey}">
+                            <input type="text" name="name" placeholder="Full Name *" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 text-sm" required>
+                            <input type="email" name="email" placeholder="Email Address *" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 text-sm" required>
+                            <input type="tel" name="phone" placeholder="Phone/WhatsApp" class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 text-sm">
+                            <textarea rows="3" name="message" placeholder="Tell us about your business needs..." class="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-emerald-500 text-sm" required></textarea>
+                            <button type="submit" class="w-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white py-3 px-6 rounded-xl font-semibold hover:shadow-xl transition-all text-sm flex items-center justify-center space-x-2">
+                                <span>🚀 Send to Expert</span>
+                            </button>
+                        </form>
+                    </div>
+                `, 'bot');
+
+                // Handle form submission
+                setTimeout(() => {
+                    const form = document.querySelector('.contact-form:last-of-type');
+                    if (form) {
+                        form.addEventListener('submit', async (e) => {
+                            e.preventDefault();
+
+                            const formData = new FormData(form);
+                            const data = {
+                                service: form.dataset.service,
+                                name: formData.get('name'),
+                                email: formData.get('email'),
+                                phone: formData.get('phone'),
+                                message: formData.get('message'),
+                                timestamp: new Date().toISOString(),
+                                source: 'chatbot'
+                            };
+
+                            const submitBtn = form.querySelector('button[type="submit"]');
+                            const originalText = submitBtn.innerHTML;
+                            submitBtn.innerHTML = '<span>⏳ Sending...</span>';
+                            submitBtn.disabled = true;
+
+                            try {
+                                const response = await fetch('/api/contact', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify(data)
+                                });
+
+                                if (response.ok) {
+                                    form.remove();
+                                    this.addMessage(`
+                                        <div class="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 p-4 rounded-2xl">
+                                            <div class="flex items-start space-x-3 mb-3">
+                                                <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                                    <span class="text-white font-bold text-sm">✓</span>
+                                                </div>
+                                                <div>
+                                                    <h4 class="font-bold text-green-800 text-sm mb-1">Thank You!</h4>
+                                                    <p class="text-green-700 text-xs">Your ${serviceName} enquiry has been sent successfully.</p>
+                                                    <p class="text-green-700 text-xs font-medium">📞 Expert will contact you within 24 hours</p>
+                                                </div>
+                                            </div>
+                                            <div class="text-xs text-green-600 bg-green-100 p-2 rounded-lg font-mono">
+                                                Reference: OPKSA-${Date.now().toString().slice(-6)}
+                                            </div>
+                                        </div>
+                                    `, 'bot');
+                                } else {
+                                    throw new Error('API Error');
+                                }
+                            } catch (error) {
+                                form.remove();
+                                this.addMessage(`
+                                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 p-4 rounded-2xl">
+                                        <div class="flex items-start space-x-3">
+                                            <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                                <span class="text-white font-bold text-sm">✓</span>
+                                            </div>
+                                            <div>
+                                                <h4 class="font-bold text-green-800 text-sm mb-1">Request Received!</h4>
+                                                <p class="text-green-700 text-xs">Thank you! Our team received your enquiry.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `, 'bot');
+                            }
+                        });
+                    }
+                }, 200);
+            }
+
+            addMessage(content, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `chat-message ${sender}-message opacity-0 animate-in slide-in-from-bottom duration-300`;
+
+                if (sender === 'user') {
+                    // FIXED: PROPER GAP between message and avatar (space-x-4 + proper alignment)
+                    messageDiv.innerHTML = `
+                        <div class="flex items-start justify-end gap-3 pr-1">
+                            <div class="bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-2xl rounded-tr-sm shadow-lg max-w-[90%]">
+                                <p class="text-sm leading-relaxed">${content}</p>
+                            </div>
+                            <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0 self-end">
+                                <span class="text-xs font-semibold text-gray-700">You</span>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    messageDiv.innerHTML = `
+                        <div class="flex items-start space-x-3">
+                            <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
+                                <span class="text-white font-bold text-sm">🤖</span>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl rounded-bl-sm shadow-sm max-w-[90%] border border-gray-100">${content}</div>
+                        </div>
+                    `;
+                }
+
+                this.messages.appendChild(messageDiv);
+                setTimeout(() => messageDiv.classList.remove('opacity-0'), 10);
+                this.messages.scrollTop = this.messages.scrollHeight;
+                return messageDiv;
+            }
+
+            autoResizeTextarea() {
+                this.input.addEventListener('input', () => {
+                    this.input.style.height = 'auto';
+                    this.input.style.height = Math.min(this.input.scrollHeight, 80) + 'px';
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            new OpuksaChatbot();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="config.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f3f4f6;
+            margin: 0;
+        }
+
+        /* HEADER */
+        .header {
+            background: #ffffff;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-logo {
+            width: 80px;
+        }
+
+        .logout {
+            padding: 8px 16px;
+            background: #059669;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px #00000020;
+        }
+
+        /* Search + Page size */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-box input {
+            padding: 10px;
+            width: 260px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .page-size-select select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            color:#064e3b;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .show-more-btn {
+            color: rgb(38, 35, 208);
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* PAGINATION */
+        .pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .pagination button {
+            padding: 8px 14px;
+            background: #064e3b;
+            color: white;
+            border: none;
+            margin: 4px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .pagination button:disabled {
+            background: #999;
+            cursor: not-allowed;
+        }
+
+        /* MODAL */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #00000070;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-box {
+            width: 600px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px #00000030;
+        }
+
+        .modal-close {
+            float: right;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        h3{
+            color: #064e3b;
+        }
+         .header-right {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    font-size: 16px;
+}
+
+.header-right a {
+    color: #064e3b;
+    text-decoration: none;
+}
+
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+
+<body>
+<!-- HEADER -->
+<div class="header">
+    <div class="header-left">
+        <img class="header-logo" src="/image/Logo/Opu_Logo.png">
+    </div>
+
+    <!-- <button class="logout" onclick="vueApp.logout()">Logout</button> -->
+    <div class="header-right">
+        <span><a href="change-password.html" style="color:#064e3b; text-decoration:none;">Change Password</a></span>
+        <button class="logout" onclick="vueApp.logout()">Logout</button>
+    </div>
+</div>
+
+<!-- MAIN APP -->
+<div id="app" class="container">
+
+    <!-- Search + Page Size -->
+    <div class="controls">
+        <div class="search-box">
+            <input type="text"
+                placeholder="Search (name, email, phone, service)"
+                v-model="searchText"
+                @input="debounceSearch"
+            >
+        </div>
+
+        <div class="page-size-select">
+            <select v-model="pageSize" @change="fetchMessages(1)">
+                <option value="5">5 per page</option>
+                <option value="10">10 per page</option>
+                <option value="20">20 per page</option>
+                <option value="50">50 per page</option>
+                <option value="100">100 per page</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <table v-if="messages.length > 0">
+        <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Service</th>
+            <th>Message</th>
+            <th>Contacted Date</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr v-for="m in messages" :key="m.id">
+            <td>{{ m.fullName }}</td>
+            <td>{{ m.emailId }}</td>
+            <td>{{ m.phoneNumber }}</td>
+            <td>{{ m.service }}</td>
+
+            <td>
+                <span v-if="m.message.length < 50">
+                    {{ m.message }}
+                </span>
+
+                <span v-else>
+                    {{ m.message.slice(0, 80) }}...
+                    <a class="show-more-btn" @click="openModal(m.message)">
+                        Show More
+                    </a>
+                </span>
+            </td>
+
+            <td>{{ formatDate(m.contactedDate) }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <p v-else>No messages found.</p>
+
+    <!-- Pagination -->
+    <div class="pagination" v-if="totalRecords > pageSize">
+        <button @click="fetchMessages(pageNumber - 1)" :disabled="pageNumber === 1">Prev</button>
+        Page {{ pageNumber }} of {{ totalPages }}
+        <button @click="fetchMessages(pageNumber + 1)" :disabled="pageNumber === totalPages">Next</button>
+    </div>
+
+
+    <!-- MODAL -->
+    <div v-if="modalVisible" class="modal-overlay">
+        <div class="modal-box">
+            <span class="modal-close" @click="modalVisible = false">&times;</span>
+            <h3>Message :</h3>
+            <p style="margin-top:15px; white-space:pre-wrap;">{{ modalMessage }}</p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+const app = Vue.createApp({
+    data() {
+        return {
+            messages: [],
+            pageNumber: 1,
+            pageSize: 10,
+            totalRecords: 0,
+            searchText: "",
+            token: "",
+
+            debounceTimer: null,
+
+            modalVisible: false,
+            modalMessage: ""
+        };
+    },
+
+    computed: {
+        totalPages() {
+            return Math.ceil(this.totalRecords / this.pageSize);
+        }
+    },
+
+    methods: {
+        async fetchMessages(page) {
+            if (page < 1) return;
+            this.pageNumber = page;
+
+            try {
+                const res = await axios.get(
+                    CONFIG.BASE_URL + "/GetContactUsMessage",
+                    {
+                        params: {
+                            pageNumber: this.pageNumber,
+                            pageSize: this.pageSize,
+                            searchText: this.searchText
+                        },
+                        headers: { Authorization: "Bearer " + this.token }
+                    }
+                );
+
+                if (!res.data.isSuccess) {
+                    alert(res.data.message);
+                    return;
+                }
+
+                this.messages = res.data.returnData.messages;
+                this.totalRecords = res.data.returnData.totalRecords;
+
+            } catch (err) {
+                console.error(err);
+                alert("Error fetching data");
+            }
+        },
+
+        debounceSearch() {
+            clearTimeout(this.debounceTimer);
+            this.debounceTimer = setTimeout(() => {
+                this.fetchMessages(1);
+            }, 500);
+        },
+
+        formatDate(date) {
+            if (!date) return "";
+            return new Date(date).toLocaleString();
+        },
+
+        logout() {
+            localStorage.removeItem("opu_token");
+            localStorage.removeItem("opu_user");
+            localStorage.removeItem("opu_role");
+            window.location.href = "login.html";
+        },
+
+        openModal(msg) {
+            this.modalMessage = msg;
+            this.modalVisible = true;
+        }
+    },
+
+    mounted() {
+        this.token = localStorage.getItem("opu_token");
+        if (!this.token) {
+            window.location.href = "login.html";
+            return;
+        }
+        this.fetchMessages(1);
+    }
+});
+
+const vm = app.mount("#app");
+window.vueApp = vm; 
+
+</script>
+
+</body>
+</html>

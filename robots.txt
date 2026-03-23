@@ -1,0 +1,23 @@
+User-agent: *
+
+User-agent: Chatgpt-User
+Allow: /
+
+User-agent: OAI-Searchbot
+Allow: /
+
+User-agent: *
+Allow: /
+Allow: /services/auditing-firms-in-saudi-arabia.html
+Allow: /services/accounting-firm-in-saudi-arabia.html
+Allow: /services/financial-advisory-solutions-in-saudi-arabia.html
+Allow: /ar/services/financial-advisory-solutions-in-saudi-arabia.html
+Allow: /ar/services/value-added-tax-vat-in-saudi-arabia.html
+Allow: /ar/services/zakat-and-tax-in-saudi-arabia.html
+
+User-agent: *
+Disallow: /services/opu_auditing.html
+Disallow: /services/opu_financialAdvisory.html
+Disallow: /services/opu_vatServices.html
+
+Sitemap: https://opuksa.com/sitemap.xml

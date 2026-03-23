@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>من نحن | أوبوكسا</title>
+  <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W9XDXD5X');</script>
+    <!-- End Google Tag Manager -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('lYNOR8xJn5g4WQJZ'); </script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/image/Logo/Opu_Logow.jpg" type="image/x-icon" />
+  <link rel="canonical" href="https://opuksa.com/about.html" />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="/js/LanguageTranslation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- إضافة خط يدعم العربية -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1F2937;
+      text-align: right;
+      direction: rtl;
+    }
+
+    .text-primary {
+      color: var(--color-primary);
+    }
+
+    .bg-primary {
+      background-color: var(--color-primary);
+    }
+
+    .hover\:bg-primary:hover {
+      background-color: var(--color-primary);
+    }
+
+    .text-secondary {
+      color: var(--color-secondary);
+    }
+
+    .bg-secondary {
+      background-color: var(--color-secondary);
+    }
+
+    .hover\:bg-secondary:hover {
+      background-color: var(--color-secondary);
+    }
+
+    .border-secondary {
+      border-color: var(--color-secondary);
+    }
+
+    .text-brand-gradient {
+      background: linear-gradient(90deg, var(--color-secondary) 0%, var(--secondary-color) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bg-brand-gradient {
+      background: linear-gradient(90deg, var(--color-secondary) 0%, var(--secondary-color) 100%);
+    }
+
+    .card-hover-effect {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover-effect:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.1), 0 4px 6px -2px rgba(5, 150, 105, 0.05);
+      border-color: var(--color-secondary);
+    }
+
+    .slider-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+    }
+
+    .slider-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonial-slide {
+      scroll-snap-align: start;
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .testimonial-slide {
+        width: calc(100% / 3 - 1.5rem);
+      }
+    }
+
+    @media (min-width: 640px) and (max-width: 1023px) {
+      .testimonial-slide {
+        width: calc(100% / 2 - 1rem);
+      }
+    }
+
+    .slider-container {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .slider-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonial-slide {
+      scroll-snap-align: start;
+      min-width: 90%;
+      transition: transform 0.3s ease-out;
+    }
+
+    @media (min-width: 640px) {
+      .testimonial-slide {
+        min-width: calc(50% - 12px);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .testimonial-slide {
+        min-width: calc(33.333333% - 16px);
+      }
+    }
+
+    .slider-button {
+      transition: all 0.3s ease-in-out;
+      opacity: 0.8;
+      transform: scale(1);
+    }
+
+    .slider-button:hover {
+      opacity: 1;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* تعديلات RTL */
+    .border-l-4 {
+      border-left-width: 0;
+      border-right-width: 4px;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .mr-3 {
+      margin-right: 0;
+      margin-left: 0.75rem;
+    }
+
+    .ml-2 {
+      margin-left: 0;
+      margin-right: 0.5rem;
+    }
+
+    .flex-row-reverse {
+      flex-direction: row-reverse;
+    }
+
+    .space-x-reverse> :not([hidden])~ :not([hidden]) {
+      --tw-space-x-reverse: 1;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8KPPFWS3R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-K8KPPFWS3R');
+  </script>
+</head>
+
+<body class="bg-white antialiased overflow-x-hidden">
+
+  <!-- HEADER (Placeholder) -->
+      <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9XDXD5X"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="header"></div>
+
+  <!-- 1. HERO SECTION: About Us Overview (Light Theme, Dark Text) -->
+  <section class="relative text-center py-32 pb-10 px-6 bg-white border-b border-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-lg font-semibold text-secondary mb-3">التزامنا بالتميز</p>
+      <h1 class="text-3xl sm:text-7xl font-extrabold mb-6 text-primary">
+        حول أوبوكسا <br>وضوح، امتثال، نمو.
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">نحن فريق متحمس من المحترفين المكرسين لتحويل حلول المحاسبة
+        والأعمال في جميع أنحاء المملكة العربية السعودية، وضمان خدمات مالية سريعة وبأسعار معقولة دون المساس بالجودة أو
+        الالتزام التنظيمي.</p>
+    </div>
+  </section>
+
+  <!-- 2. MISSION, VISION, & STORY (Alternating Backgrounds) -->
+  <section class="py-20 md:py-10 px-6 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+
+        <!-- The Mission & The Vision -->
+        <div class="space-y-10">
+          <!-- The Mission -->
+          <div class="p-8 bg-white rounded-xl shadow-lg border-r-4 border-secondary card-hover-effect">
+            <h2 class="text-3xl font-bold text-primary mb-4 flex items-center flex-row-reverse">
+              <i data-lucide="target" class="w-7 h-7 ml-3 text-secondary"></i> مهمتنا
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              تقديم إرشادات مالية عالية الجودة وضمان حفاظ الشركات على الامتثال والشفافية والنمو المستدام من خلال خدمات
+              المحاسبة والمراجعة والاستشارات المخصصة. نعطي الأولوية للحلول الفعالة والمتطورة لتقديم خدمات محاسبية مالية
+              سريعة وبأسعار معقولة لكل عميل.
+            </p>
+          </div>
+
+          <!-- The Vision -->
+          <div class="p-8 bg-white rounded-xl shadow-lg border-r-4 border-primary card-hover-effect">
+            <h2 class="text-3xl font-bold text-primary mb-4 flex items-center flex-row-reverse">
+              <i data-lucide="eye" class="w-7 h-7 ml-3 text-secondary"></i> رؤيتنا
+            </h2>
+            <p class="text-gray-600 leading-relaxed">
+              أن نصبح شركة المحاسبة والاستشارات الرائدة في المملكة العربية السعودية، وإعادة تعريف كيفية تعامل الشركات مع
+              الشؤون المالية والامتثال والنمو من خلال الرؤى المدفوعة بالتكنولوجيا والخبرة المحلية التي لا مثيل لها.
+            </p>
+          </div>
+        </div>
+
+        <!-- The Story -->
+        <div class="p-8 md:p-12 bg-primary rounded-xl text-white shadow-2xl">
+          <h2 class="text-4xl font-extrabold mb-6 flex items-center border-b border-white/30 pb-4 flex-row-reverse">
+            <i data-lucide="bookmark" class="w-8 h-8 ml-3 text-secondary"></i> قصتنا
+          </h2>
+          <p class="text-gray-200 text-lg leading-relaxed">
+            تأسست أوبوكسا برؤية لجلب الوضوح إلى المشهد المالي المعقد، وتطورت لتصبح شريكًا موثوقًا للشركات من جميع
+            الأحجام. بدأت رحلتنا بالالتزام بتعميم المعرفة المالية الخبيرة، وجعلها في متناول الشركات الصغيرة والمتوسطة
+            والكبيرة على حد سواء في السوق السعودي سريع التطور.
+            <br><br>
+            مع فريق مخصص من المحترفين المعتمدين وسنوات من الخبرة في المراجعة والضرائب وتأسيس الأعمال، ساعدنا مئات
+            العملاء على تحقيق التميز التشغيلي والامتثال والصحة المالية القوية، مما يدعم النمو الاقتصادي المتناغم مع رؤية
+            2030.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. OUR VALUES (Grid with large icons) -->
+  <section class="py-20 md:py-10 px-6 bg-white">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-extrabold text-primary mb-3">قيمنا الأساسية</h2>
+      <p class="text-xl text-gray-600 max-w-4xl mx-auto mb-16">هذه المبادئ توجه كل قرار نتخذه وكل تفاعل لدينا مع عملائنا
+        وشركائنا.</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- Value 1: Integrity -->
+        <div class="p-6 rounded-xl border-2 border-gray-100 card-hover-effect">
+          <i data-lucide="gem" class="w-12 h-12 text-secondary mb-4 mx-auto"></i>
+          <h3 class="font-bold text-xl mb-2 text-primary">النزاهة</h3>
+          <p class="text-gray-600 text-sm">الالتزام بأعلى المعايير الأخلاقية في جميع الأمور المالية والتنظيمية.</p>
+        </div>
+
+        <!-- Value 2: Transparency -->
+        <div class="p-6 rounded-xl border-2 border-gray-100 card-hover-effect">
+          <i data-lucide="eye" class="w-12 h-12 text-secondary mb-4 mx-auto"></i>
+          <h3 class="font-bold text-xl mb-2 text-primary">الشفافية</h3>
+          <p class="text-gray-600 text-sm">تقديم تقارير واتصالات واضحة وصادقة وشاملة في جميع الأوقات.</p>
+        </div>
+
+        <!-- Value 3: Expertise -->
+        <div class="p-6 rounded-xl border-2 border-gray-100 card-hover-effect">
+          <i data-lucide="graduation-cap" class="w-12 h-12 text-secondary mb-4 mx-auto"></i>
+          <h3 class="font-bold text-xl mb-2 text-primary">الخبرة</h3>
+          <p class="text-gray-600 text-sm">الاستفادة من المعرفة العميقة المعتمدة في لوائح هيئة الزكاة والضريبة والجمارك
+            واللوائح المحلية لتحقيق النتائج المثلى.</p>
+        </div>
+
+        <!-- Value 4: Client-Centric -->
+        <div class="p-6 rounded-xl border-2 border-gray-100 card-hover-effect">
+          <i data-lucide="user-check" class="w-12 h-12 text-secondary mb-4 mx-auto"></i>
+          <h3 class="font-bold text-xl mb-2 text-primary">التركيز على العميل</h3>
+          <p class="text-gray-600 text-sm">تخصيص الحلول لتلبية احتياجات الأعمال المحددة ودعم النجاح طويل الأمد.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. OUR RESOURCES (Downloadable Content / Knowledge Hub) -->
+  <section id="resources" class="py-20 md:py-12 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-extrabold text-primary mb-3">مواردنا</h2>
+        <p class="text-xl text-gray-600 max-w-4xl mx-auto">الوصول إلى أدوات ودلائل حصرية لتعزيز معرفتك المالية وامتثال
+          عملك.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Resource 1: E-Invoicing Guide -->
+        <div
+          class="p-6 bg-secondary/5 rounded-xl border border-secondary/20 flex flex-col justify-between card-hover-effect">
+          <div>
+            <i data-lucide="file-text" class="w-10 h-10 text-secondary mb-4"></i>
+            <h3 class="font-bold text-xl mb-2 text-primary text-right">الدليل الشامل للفواتير الإلكترونية من هيئة الزكاة
+              والضريبة والجمارك</h3>
+            <p class="text-gray-600 text-sm text-right">دليل PDF خطوة بخطوة لضمان امتثال عملك الكامل لأحدث متطلبات
+              الفواتير الإلكترونية (فاتورة).</p>
+          </div>
+        </div>
+
+        <!-- Resource 2: Corporate Tax Checklist -->
+        <div
+          class="p-6 bg-secondary/5 rounded-xl border border-secondary/20 flex flex-col justify-between card-hover-effect">
+          <div>
+            <i data-lucide="clipboard-check" class="w-10 h-10 text-secondary mb-4"></i>
+            <h3 class="font-bold text-xl mb-2 text-primary text-right">قائمة مراجعة الضريبة على الشركات السنوية</h3>
+            <p class="text-gray-600 text-sm text-right">قائمة مفصلة بالمستندات والإجراءات اللازمة للتحضير لتقديم إقرار
+              الضريبة على الشركات والمراجعات.</p>
+          </div>
+        </div>
+
+        <!-- Resource 3: Business Setup Advisory -->
+        <div
+          class="p-6 bg-secondary/5 rounded-xl border border-secondary/20 flex flex-col justify-between card-hover-effect">
+          <div>
+            <i data-lucide="lightbulb" class="w-10 h-10 text-secondary mb-4"></i>
+            <h3 class="font-bold text-xl mb-2 text-primary text-right">رؤى النمو والاستشارات للشركات الصغيرة والمتوسطة
+            </h3>
+            <p class="text-gray-600 text-sm text-right">رؤى شهرية حول الاستراتيجيات المالية، وتحسين التكاليف، والتخطيط
+              الاستثماري للشركات النامية.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA SECTION (Final Call to Action) -->
+  <section class="py-24 text-center bg-primary text-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="text-4xl font-extrabold mb-6">
+        مستعد لخوض تجربة الوضوح المالي؟
+      </h2>
+      <p class="text-gray-200 mb-8 text-lg">دع أوبوكسا تتعامل مع التعقيدات، بينما تركز أنت على دفع عملك للأمام.</p>
+      <a href="/ar/contact.html"
+        class="inline-block bg-brand-gradient px-8 py-4 rounded-full font-semibold text-white shadow-lg hover:shadow-xl transition-all hover:bg-white bg-white">
+        تواصل مع خبرائنا اليوم
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER (Placeholder) -->
+  <div id="footer"></div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // GSAP ScrollTrigger Animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Simple fade-in animation for the section
+    gsap.from("section", {
+      opacity: 0,
+      y: 50,
+      duration: 0.8,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "section",
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      }
+    });
+  </script>
+
+  <script src="js/script.js"></script>
+  <script src="js/chatbot-arabic-component.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      new OpuksaChatbot({
+        apiEndpoint: 'https://pxibh983vh.execute-api.ap-south-1.amazonaws.com/Prod/api/OPUKsa/Contact'
+      });
+    });
+  </script>
+
+</body>
+
+</html>
