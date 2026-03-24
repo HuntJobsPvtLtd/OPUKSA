@@ -40,12 +40,12 @@
         "@type": "ListItem", 
         "position": 2, 
         "name": "Auditing",
-        "item": "https://opuksa.com/services/auditing-firms-in-saudi-arabia.html"  
+        "item": "https://opuksa.com/services/audit-and-assurance-services-in-saudi-arabia.html"  
       },{
         "@type": "ListItem", 
         "position": 3, 
         "name": "Accounting",
-        "item": "https://opuksa.com/services/accounting-firm-in-saudi-arabia.html"  
+        "item": "https://opuksa.com/services/accounting-services-in-saudi-arabia.html"  
       },{
         "@type": "ListItem", 
         "position": 4, 
@@ -123,8 +123,6 @@
     <!-- Configure Tailwind Colors & Font -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
-
 
         body {
             font-family: 'Inter', sans-serif;
@@ -520,6 +518,20 @@
                 </div>
             </div>
         </section>
+        <section class="team-section py-20 md:py-12 px-6 bg-green-50">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-extrabold text-center text-primary mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-lg text-center text-gray-600 mb-12">
+                    Quick answers to common questions about Financial Advisory Services in Saudi Arabia.
+                </p>
+
+                <div id="faq-container" class="space-y-4">
+                    <!-- FAQ items will be dynamically inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer (Consistent) -->
@@ -553,6 +565,114 @@
                 }, delay);
             });
         });
+    </script>
+    <style>
+        /* Hide answer with transition for smooth expansion */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 1.25rem;
+            /* Keep side padding, but zero top/bottom */
+        }
+
+        /* When open, allow the content to expand */
+        .faq-answer.open {
+            max-height: 500px;
+            /* Adjust to comfortably fit your longest answer */
+            transition: max-height 0.4s ease-in;
+        }
+
+        /* Ensure inner paragraph respects padding */
+        .faq-answer p {
+            margin: 0;
+            padding: 0 0 1.25rem 0;
+        }
+
+        /* Rotate chevron icon when expanded */
+        .faq-button[aria-expanded="true"] i {
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-button i {
+            transition: transform 0.3s ease;
+        }
+    </style>
+    <script>
+        // --- FAQ LOGIC ---
+        const faqs = [
+            {
+                question: "How can a financial advisor assist foreign companies entering the Saudi market?",
+                answer: "Entering the Kingdom requires careful financial planning. Advisors help foreign investors by conducting localized market feasibility studies, determining optimal capital structuring for Ministry of Investment (MISA) license applications, and creating financial projections that meet local banking and regulatory standards."
+            },
+            {
+                question: "What is the difference between financial advisory and statutory audit services?",
+                answer: "While statutory audits focus on verifying historical financial data for compliance with SOCPA standards, financial advisory is forward-looking. Advisory services focus on strategic decision-making, forecasting future performance, improving cash flow, and maximizing shareholder value."
+            },
+            {
+                question: "Do financial advisory services cover Zakat and Corporate Tax planning?",
+                answer: "Yes. Strategic tax planning is a core component of financial advisory. Advisors analyze your business structure and revenue streams to optimize your tax position, ensuring compliance with ZATCA regulations while minimizing unnecessary financial leakage."
+            },
+            {
+                question: "Why is IFRS advisory critical for businesses operating in Saudi Arabia?",
+                answer: "The Saudi Organization for Chartered and Professional Accountants (SOCPA) requires companies to adopt International Financial Reporting Standards (IFRS). Financial advisors guide businesses through complex transitions, assess the financial impact of new standards, and ensure your reporting accurately reflects your company’s financial reality."
+            },
+            {
+                question: "Why is it important to work with a local financial advisory firm?",
+                answer: "Navigating the Saudi business landscape requires deep local expertise. A locally rooted advisory firm understands regional market nuances, stays updated with evolving regulations from the Ministry of Commerce and ZATCA, and maintains strong relationships with local financial institutions."
+            }
+        ];
+
+        const faqContainer = document.getElementById('faq-container');
+
+        faqs.forEach((faq, index) => {
+            const item = document.createElement('div');
+            item.className = 'bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden transition-all duration-300';
+
+            const questionButton = document.createElement('button');
+            questionButton.className = 'faq-button w-full flex justify-between items-center p-5 text-left font-semibold text-lg text-primary hover:bg-gray-50 transition-colors';
+            questionButton.setAttribute('aria-expanded', 'false');
+            questionButton.setAttribute('aria-controls', `faq-answer-${index}`);
+            questionButton.innerHTML = `
+            <span>${faq.question}</span>
+            <i data-lucide="chevron-down" class="w-6 h-6 text-secondary flex-shrink-0 ml-4"></i>
+        `;
+            questionButton.onclick = () => toggleFaq(questionButton);
+
+            const answerDiv = document.createElement('div');
+            answerDiv.id = `faq-answer-${index}`;
+            answerDiv.className = 'faq-answer px-5 text-gray-600';
+            answerDiv.setAttribute('aria-hidden', 'true');
+            answerDiv.innerHTML = `<p class="pb-5 leading-relaxed">${faq.answer}</p>`;
+
+            item.appendChild(questionButton);
+            item.appendChild(answerDiv);
+            faqContainer.appendChild(item);
+        });
+
+        function toggleFaq(button) {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            const answerDiv = document.getElementById(button.getAttribute('aria-controls'));
+
+            document.querySelectorAll('.faq-button[aria-expanded="true"]').forEach(otherButton => {
+                if (otherButton !== button) {
+                    otherButton.setAttribute('aria-expanded', 'false');
+                    document.getElementById(otherButton.getAttribute('aria-controls')).classList.remove('open');
+                    document.getElementById(otherButton.getAttribute('aria-controls')).setAttribute('aria-hidden', 'true');
+                }
+            });
+
+            if (isExpanded) {
+                button.setAttribute('aria-expanded', 'false');
+                answerDiv.classList.remove('open');
+                answerDiv.setAttribute('aria-hidden', 'true');
+            } else {
+                button.setAttribute('aria-expanded', 'true');
+                answerDiv.classList.add('open');
+                answerDiv.setAttribute('aria-hidden', 'false');
+            }
+        }
     </script>
     <script src="/js/chatbot-component.js"></script>
     <script>

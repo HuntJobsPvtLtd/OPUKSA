@@ -8,10 +8,10 @@ Allow: /
 
 User-agent: *
 Allow: /
-Allow: /services/auditing-firms-in-saudi-arabia.html
-Allow: /services/accounting-firm-in-saudi-arabia.html
-Allow: /services/financial-advisory-solutions-in-saudi-arabia.html
-Allow: /ar/services/financial-advisory-solutions-in-saudi-arabia.html
+Allow: /services/audit-and-assurance-services-in-saudi-arabia.html
+Allow: /services/accounting-services-in-saudi-arabia.html
+Allow: /services/financial-advisory-services-in-saudi-arabia.html
+Allow: /ar/services/financial-advisory-services-in-saudi-arabia.html
 Allow: /ar/services/value-added-tax-vat-in-saudi-arabia.html
 Allow: /ar/services/zakat-and-tax-in-saudi-arabia.html
 
