@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sitemap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="/js/LanguageTranslation.js"></script>
+    <link rel="icon" href="/image/Logo/Opu_Logow.jpg" type="image/x-icon" />
+    <script src="/js/script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f9fc;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #222;
+        }
+
+        .sitemap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #064e3b;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            margin: 8px 0;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: #333;
+            transition: 0.2s;
+        }
+
+        .card a:hover {
+            color: #064e3b;
+            padding-left: 5px;
+        }
+
+        .sub {
+            margin-left: 15px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="max-w-6xl mx-auto px-6 py-40">
+
+        <!-- Title -->
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
+            Sitemap
+        </h1>
+
+        <!-- Grid -->
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <!-- Main -->
+            <div
+                class="card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-semibold text-emerald-900 mb-4 flex items-center gap-2">
+                    <i data-lucide="home"></i> Main
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li><a href="/" class="hover:text-emerald-800 transition">Home</a></li>
+                    <li><a href="/about.html" class="hover:text-emerald-800 transition">About Us</a></li>
+                    <li><a href="/contact.html" class="hover:text-emerald-800 transition">Contact Us</a></li>
+                    <li><a href="/blog.html" class="hover:text-emerald-800 transition">Blog</a></li>
+                    <li><a href="/career.html" class="hover:text-emerald-800 transition">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div
+                class="card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-semibold text-emerald-900 mb-4 flex items-center gap-2">
+                    <i data-lucide="briefcase"></i> Services
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li><a href="/services/audit-and-assurance-services-in-saudi-arabia.html" class="hover:text-emerald-800 transition">Audit and Assurance</a>
+                    </li>
+                    <li><a href="/services/accounting-services-in-saudi-arabia.html" class="hover:text-emerald-800 transition">Accounting Services</a>
+                    </li>
+                    <li class="ml-4 text-sm text-gray-500">
+                        <a href="/services/accounting-advisory-in-saudi-arabia.html" class="hover:text-emerald-800 transition">Accounting
+                            Advisory</a>
+                    </li>
+                    <li><a href="/services/company-formation-in-saudi-arabia.html" class="hover:text-emerald-800 transition">Company Formation</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tax -->
+            <div
+                class="card bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-semibold text-emerald-900 mb-4 flex items-center gap-2">
+                    <i data-lucide="calculator"></i> Tax & Finance
+                </h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li><a href="/services/zakat-and-tax-in-saudi-arabia.html" class="hover:text-emerald-800 transition">Zakat and Tax</a></li>
+                    <li><a href="/services/value-added-tax-vat-in-saudi-arabia.html" class="hover:text-emerald-800 transition">VAT Services</a></li>
+                    <li><a href="/services/financial-advisory-services-in-saudi-arabia.html" class="hover:text-emerald-800 transition">Financial Advisory</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+
+
+</body>
+
+</html>
