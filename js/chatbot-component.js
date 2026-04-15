@@ -146,7 +146,7 @@ class OpuksaChatbot {
         <div class="p-3 sm:p-5 border-t border-gray-100 bg-white rounded-b-2xl">
           <div class="flex items-end space-x-2 sm:space-x-3">
             <div class="flex-1 min-w-0">
-              <textarea id="chatInput" rows="1" placeholder="Ask about any Opuksa service..." 
+              <textarea id="chatInput" rows="1" placeholder="Ask about any OPU service..." 
                 class="w-full p-2.5 sm:p-3 border border-gray-200 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm leading-relaxed max-h-16 sm:max-h-20 transition-all duration-200"></textarea>
             </div>
             <button id="chatSend" class="w-10 h-10 sm:w-11 sm:h-11 bg-emerald-500 hover:bg-emerald-600 active:bg-emerald-700 shadow-lg hover:shadow-xl rounded-xl flex items-center justify-center text-white transition-all duration-200 hover:scale-105 active:scale-95 flex-shrink-0 border-2 border-emerald-400">
@@ -355,7 +355,7 @@ class OpuksaChatbot {
   // Show contact form with CAPTCHA
   showContactForm(serviceKey = "general") {
     const serviceName = serviceKey === "general"
-      ? "Opuksa Services"
+      ? "OPU Services"
       : (this.services[serviceKey]?.title || "Services");
 
     this.addMessage(
@@ -462,7 +462,7 @@ class OpuksaChatbot {
     this.addMessage(
       `
       <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-        <p class="text-gray-700 text-sm mb-3">I can help with these Opuksa services:</p>
+        <p class="text-gray-700 text-sm mb-3">I can help with these OPU services:</p>
         <div class="grid grid-cols-2 gap-2 mb-4">
           <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs rounded-lg font-medium">Auditing</span>
           <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-lg font-medium">Accounting</span>
@@ -517,7 +517,7 @@ class OpuksaChatbot {
         <div class="bg-white p-4 rounded-2xl rounded-bl-sm shadow-sm border border-gray-100">
           <p class="text-gray-800 text-sm leading-relaxed mb-4">
             Hello! 👋 I'm here to help with 
-            <strong class="text-emerald-600">all Opuksa services in Saudi Arabia</strong>.
+            <strong class="text-emerald-600">all OPU services in Saudi Arabia</strong>.
           </p>
           <div class="grid grid-cols-2 gap-2">
             <button class="quick-reply px-3 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 text-xs font-medium rounded-lg transition-all duration-200 border border-emerald-200 whitespace-nowrap" data-query="auditing">

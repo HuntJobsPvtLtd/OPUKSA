@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opuksa Chatbot - Fixed Contact Form</title>
+    <title>OPU Chatbot - Fixed Contact Form</title>
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -93,7 +93,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Corporation",
-      "name": "Opuksa",
+      "name": "OPU",
       "url": "https://opuksa.com/",
       "logo": "https://opuksa.com/image/Logo/Opu_Logo.png",
       "contactPoint": {
@@ -181,7 +181,7 @@
                     </div>
                     <div class="bg-white p-4 rounded-2xl rounded-bl-sm shadow-sm max-w-[90%] border border-gray-100">
                         <p class="text-gray-800 text-sm leading-relaxed mb-3">Hello! 👋 I'm here to help with <strong
-                                class="text-emerald-600">all Opuksa services in Saudi Arabia</strong>.</p>
+                                class="text-emerald-600">all OPU services in Saudi Arabia</strong>.</p>
                         <div class="grid grid-cols-2 gap-2 mb-4">
                             <button
                                 class="quick-reply px-3 py-2 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 text-xs font-medium rounded-lg transition-all duration-200 border border-emerald-200"
@@ -211,7 +211,7 @@
         <div class="p-5 border-t border-gray-100 bg-white rounded-b-2xl">
             <div class="flex items-center space-x-3">
                 <div class="flex-1 min-w-0">
-                    <textarea id="chatInput" rows="1" placeholder="Ask about any Opuksa service..."
+                    <textarea id="chatInput" rows="1" placeholder="Ask about any OPU service..."
                         class="w-full p-3 border border-gray-200 rounded-xl resize-none focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-sm leading-relaxed max-h-20 transition-all duration-200"></textarea>
                 </div>
                 <button id="chatSend"
@@ -415,7 +415,7 @@
             showGenericResponse() {
                 this.addMessage(`
                     <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100">
-                        <p class="text-gray-700 text-sm mb-3">I can help with these Opuksa services:</p>
+                        <p class="text-gray-700 text-sm mb-3">I can help with these OPU services:</p>
                         <div class="grid grid-cols-2 gap-2 mb-4">
                             <span class="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs rounded-lg font-medium">Auditing</span>
                             <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-lg font-medium">Accounting</span>
@@ -432,7 +432,7 @@
             }
 
             showContactForm(serviceKey = 'general') {
-                const serviceName = serviceKey === 'general' ? 'Opuksa Services' : this.services[serviceKey]?.title || 'Services';
+                const serviceName = serviceKey === 'general' ? 'OPU Services' : this.services[serviceKey]?.title || 'Services';
 
                 this.addMessage(`
                     <div class="bg-emerald-50 border-2 border-emerald-200 p-5 rounded-2xl">
